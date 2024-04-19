@@ -11,3 +11,5 @@ steps:
     script: |
       #!/usr/bin/env python
       print('hello from python2')
+  options:
+    logging: CLOUD_LOGGING_ONLY
