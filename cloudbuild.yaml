@@ -1,0 +1,9 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'backend-employee', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'backend-employee']
+  - name: 'python'
+    script: |
+      #!/usr/bin/env python
+      print('hello from python')
