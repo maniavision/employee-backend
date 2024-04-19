@@ -1,14 +1,12 @@
 steps:
   - name: 'gcr.io/cloud-builders/mvn'
     args: ['clean', 'install']
-  - name: 'List'
-    script: |
-      #!/usr/bin/env bash
-      ls -l
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'backend-employee', '.']
+    args: ['build', '-t', 'maniavision/backend-employee', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'backend-employee']
+    args: ['login', '-u', 'maniavision', '-p', 'Fort12632142']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'maniavision/backend-employee']
   - name: 'python'
     script: |
       #!/usr/bin/env python
