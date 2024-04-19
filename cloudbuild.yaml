@@ -10,4 +10,4 @@ steps:
   - name: 'python'
     script: |
       #!/usr/bin/env python
-      print('hello from python')
+      print('hello from python2')
