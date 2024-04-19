@@ -1,6 +1,10 @@
 steps:
   - name: 'gcr.io/cloud-builders/mvn'
     args: ['clean', 'install']
+  - name: 'List'
+    script: |
+      #!/usr/bin/env bash
+      ls -l
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'backend-employee', '.']
   - name: 'gcr.io/cloud-builders/docker'
