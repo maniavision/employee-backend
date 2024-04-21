@@ -7,6 +7,8 @@ steps:
     args: ['login', '-u', 'maniavision', '-p', 'Fort12632142']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'maniavision/backend-employee']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['image', 'ls']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', 'backend-employee', '--image', 'maniavision/backend-employee:latest', '--region=us-central1', '--allow-unauthenticated']
 options:
