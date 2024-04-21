@@ -2,6 +2,8 @@ steps:
   - name: 'gcr.io/cloud-builders/mvn'
     args: ['clean', 'install']
   - name: 'gcr.io/cloud-builders/docker'
+    args: ['image', 'rm' , '-f', 'maniavision/backend-employee']
+  - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'maniavision/backend-employee', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['login', '-u', 'maniavision', '-p', 'Fort12632142']
