@@ -32,6 +32,7 @@ public class EmployeeService {
     }
 
     public void updateEmployee(Employee updatedEmployee) {
+        log.info("Update an employee.");
         this.employeeRepository.save(updatedEmployee);
     }
 
