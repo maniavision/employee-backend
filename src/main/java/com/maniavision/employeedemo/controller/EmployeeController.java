@@ -2,13 +2,13 @@ package com.maniavision.employeedemo.controller;
 
 import com.maniavision.employeedemo.entity.Employee;
 import com.maniavision.employeedemo.service.EmployeeService;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/api/employees")
 public class EmployeeController {
 
@@ -19,7 +19,7 @@ public class EmployeeController {
     }
 
     @GetMapping()
-    ResponseEntity<List<Employee>> getEmplpoyees() {
+    ResponseEntity<List<Employee>> getEmployees() {
         return ResponseEntity.ok(this.employeeService.getEmployees());
     }
 

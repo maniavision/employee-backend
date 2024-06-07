@@ -34,7 +34,7 @@ public class EmployeeControllerTest {
 
         when(mockEmployeeService.getEmployees()).thenReturn(employees);
 
-        ResponseEntity<List<Employee>> response = controller.getEmplpoyees();
+        ResponseEntity<List<Employee>> response = controller.getEmployees();
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(1, response.getBody().size());
