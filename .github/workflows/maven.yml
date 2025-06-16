@@ -28,4 +28,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn install -DskipTests
+    - name: Run Tests
+      run: mvn test --batch-mode -Dmaven.test.failure.ignore=true
+    - name: Publish test results
+      if: always()
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      with:
+          # Adjust the path pattern to where your surefire reports are generated.
+        files: '**/target/surefire-reports/*.xml'
